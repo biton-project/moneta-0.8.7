@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x642e8a7b6549d54a5f13d78ecfa8f024740fbc145f0ed0fd211d65e02afff70c");
+uint256 hashGenesisBlock("0xf524460928326bffb73b52b8c4e1e30a35b0128609e11c582ca266adb4b1c40a");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Moneta: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2779,7 +2779,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "01-05-2015 70 years of Russian win in WOW Amuse start";
+        const char* pszTimestamp = "Moneta.io";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2791,14 +2791,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1431370574;
+        block.nTime    = 1434971660;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 688378;
+        block.nNonce   = 4016724;
 
         if (fTestNet)
         {
-            block.nTime    = 1431370574;
-            block.nNonce   = 688378;
+            block.nTime    = 1434971660;
+            block.nNonce   = 4016724;
         }
 
         //// debug print
@@ -2806,7 +2806,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x1ce12f86784b1fb5d1f450896e28b63070a662fa5b229b657904341b69d0ca22"));
+        assert(block.hashMerkleRoot == uint256("0x8712c2b33c8015244188ac1bf0dce7c40ef17e3cf79c48d6e31e2b8ae6412c4f"));
         block.print();
         assert(hash == hashGenesisBlock);
 
