@@ -15,7 +15,7 @@ Moneta is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - ~84 million total coins
 
 The rest is the same as Bitcoin.
- - 50 coins per block
+ - 500 coins per block
  - 2016 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
@@ -48,8 +48,15 @@ The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/moneta-project/moneta/tags) are created
 regularly to indicate new official, stable release versions of Moneta.
 
+Build
+-------
+
+make -j4 -f makefile.unix USE_UPNP=1 USE_QRCODE=1 USE_IPV6=0 RELEASE=1
+
 Testing
 -------
+
+
 
 Testing and code review is the bottleneck for development; we get more pull
 requests than we can review and test. Please be patient and help out, and
